@@ -1,3 +1,0 @@
-(fp_lib_table
-  (lib (name TinyFPGA)(type KiCad)(uri ${KIPRJMOD}/tinyfpga.pretty)(options "")(descr ""))
-)
