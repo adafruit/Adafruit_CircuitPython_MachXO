@@ -26,10 +26,17 @@ class MachXO:
         self.config_data = None
         self._bus = i2c_device.I2CDevice(bus, address)
 
-        if self.device_id == b"\x61\x2B\xd0\x43":
+        if self.device_id == b"\x01\x2B\xa0\x43":
+            # Mach XO2 1200
+            pass
+        elif self.device_id == b"\x61\x2B\xd0\x43":
             # Mach XO3 6900
             pass
+        elif self.device_id == b"\x01\x2B\x50\x43":
+            # Mach X02 7000
+            pass
         else:
+            print([hex(x) for x in self.device_id])
             raise ValueError("Unable to confirm Mach XO device id")
 
         self._erased = False
