@@ -1,4 +1,3 @@
-
 class JedecFile(object):
     def __init__(self, jed_file):
         self.cfg_data = None
@@ -49,7 +48,7 @@ class JedecFile(object):
                     self.ebr_data = data
 
                 elif "END CONFIG DATA" in self.last_note:
-                    pass # ignore this data
+                    pass  # ignore this data
 
                 elif "TAG DATA" in self.last_note:
                     self.ufm_data = data
@@ -60,8 +59,6 @@ class JedecFile(object):
             elif field[0][0] == "E":
                 self.feature_row = line_to_int(field[0][1:])
                 self.feature_bits = line_to_int(field[1][:-1])
-
-
 
         lines = iter(jed)
 

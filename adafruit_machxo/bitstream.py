@@ -1,4 +1,3 @@
-
 class BitstreamFile:
     def __init__(self, bit_file):
         self.cfg_data = None

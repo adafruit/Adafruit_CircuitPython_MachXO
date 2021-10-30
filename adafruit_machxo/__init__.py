@@ -1,5 +1,6 @@
 from adafruit_bus_device import i2c_device
 
+
 class _Register:
     def __init__(self, command, size):
         self._size = size
@@ -14,6 +15,7 @@ class _Register:
         with instance._bus as bus:
             bus.write_then_readinto(self._command, self._buf)
         return self._buf
+
 
 class MachXO:
     device_id = _Register(b"\xE0\x00\x00\x00", 4)
@@ -47,8 +49,8 @@ class MachXO:
 
     def __exit__(self, exc_type, exc_val, exc_tb):
         with self._bus as bus:
-            bus.write(b"\x5e\x00\x00\x00") # program done
-            bus.write(b"\x79\x00\x00") # refresh
+            bus.write(b"\x5e\x00\x00\x00")  # program done
+            bus.write(b"\x79\x00\x00")  # refresh
 
     def config_mode(self, offline=True):
         if self._config_mode:
@@ -58,7 +60,9 @@ class MachXO:
         self._config_mode = True
         return self
 
-    def _check_config_mode(self,):
+    def _check_config_mode(
+        self,
+    ):
         if not self._config_mode:
             raise RuntimeError("Must be in config mode")
 
@@ -92,7 +96,6 @@ class MachXO:
             bus.write(cmd)
         self._wait_busy()
         self._erased = True
-
 
     def flash(self, data):
         self._check_config_mode()
