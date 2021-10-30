@@ -1,3 +1,8 @@
+# SPDX-FileCopyrightText: 2020 Luke Valenty for Adafruit Industries
+#
+# SPDX-License-Identifier: Unlicense
+
+
 class BitstreamFile:
     def __init__(self, bit_file):
         self.cfg_data = None

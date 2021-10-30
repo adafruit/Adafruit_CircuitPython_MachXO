@@ -1,3 +1,8 @@
+# SPDX-FileCopyrightText: 2020 Luke Valenty for Adafruit Industries
+#
+# SPDX-License-Identifier: Unlicense
+
+
 class JedecFile(object):
     def __init__(self, jed_file):
         self.cfg_data = None

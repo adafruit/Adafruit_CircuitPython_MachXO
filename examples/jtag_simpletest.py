@@ -1,3 +1,7 @@
+# SPDX-FileCopyrightText: 2020 Luke Valenty for Adafruit Industries
+#
+# SPDX-License-Identifier: Unlicense
+
 # async_serial = tinyfpgaa.SyncSerial(ser)
 # pins = tinyfpgaa.JtagTinyFpgaProgrammer(async_serial)
 # jtag = tinyfpgaa.Jtag(pins)

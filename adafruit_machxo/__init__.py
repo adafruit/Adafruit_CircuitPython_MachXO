@@ -1,3 +1,7 @@
+# SPDX-FileCopyrightText: 2020 Luke Valenty for Adafruit Industries
+#
+# SPDX-License-Identifier: Unlicense
+
 from adafruit_bus_device import i2c_device
 
 

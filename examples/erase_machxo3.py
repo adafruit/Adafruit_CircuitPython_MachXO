@@ -1,3 +1,7 @@
+# SPDX-FileCopyrightText: 2020 Luke Valenty for Adafruit Industries
+#
+# SPDX-License-Identifier: Unlicense
+
 import adafruit_jtag
 import board
 import digitalio
