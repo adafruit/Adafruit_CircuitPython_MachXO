@@ -1,3 +1,7 @@
+# SPDX-FileCopyrightText: 2020 Luke Valenty for Adafruit Industries
+#
+# SPDX-License-Identifier: Unlicense
+
 import adafruit_jtag
 import board
 import digitalio
@@ -16,12 +20,12 @@ jtag.read_dr(32, buf)
 print(buf[:4])
 
 # Set the boundary conditions.
-jtag.write_ir(8, 0x1c)
+jtag.write_ir(8, 0x1C)
 jtag.write_dr(664, True)
 
 
 # Shift in LSC_READ_STATUS(0x3C) instruction
-jtag.write_ir(8, 0x3c)
+jtag.write_ir(8, 0x3C)
 jtag.runtest(2)
 jtag.read_dr(32, buf)
 print("status", buf[:4])
@@ -29,51 +33,51 @@ print("status", buf[:4])
 # Enable the Flash
 
 # Shift in ISC ENABLE(0xC6) instruction
-jtag.write_ir(8, 0xc6)
+jtag.write_ir(8, 0xC6)
 jtag.write_dr(8, 0x00)
 jtag.runtest(2)
 
 # Shift in ISC ERASE(0x0E) instruction
-jtag.write_ir(8, 0x0e)
+jtag.write_ir(8, 0x0E)
 jtag.write_dr(8, 0x01)
 jtag.runtest(2)
 
 # Shift in BYPASS(0xFF) instruction
-jtag.write_ir(8, 0xff)
+jtag.write_ir(8, 0xFF)
 
 # Shift in ISC ENABLE(0xC6) instruction
-jtag.write_ir(8, 0xc6)
+jtag.write_ir(8, 0xC6)
 jtag.write_dr(8, 0x08)
 jtag.runtest(2)
 
 # Shift in LSC_READ_STATUS(0x3C) instruction
-jtag.write_ir(8, 0x3c)
+jtag.write_ir(8, 0x3C)
 jtag.runtest(2)
 jtag.read_dr(32, buf)
 print("status", buf[:4])
 
-jtag.write_ir(8, 0x0e)
-jtag.write_dr(8, 0x0e)
+jtag.write_ir(8, 0x0E)
+jtag.write_dr(8, 0x0E)
 jtag.runtest(2)
 
 # Shift in LSC_CHECK_BUSY(0xF0) instruction
-jtag.write_ir(8, 0xf0)
+jtag.write_ir(8, 0xF0)
 
 # Wait for busy
 i = 0
 while True:
-        jtag.runtest(2)
-        jtag.read_dr(1, buf)
-        if buf[0] == 0:
-                print("done", i)
-                break
-        i += 1
+    jtag.runtest(2)
+    jtag.read_dr(1, buf)
+    if buf[0] == 0:
+        print("done", i)
+        break
+    i += 1
 
 jtag.write_ir(8, 0x26)
 jtag.runtest(2)
 
 # Shift in BYPASS(0xFF) instruction
-jtag.write_ir(8, 0xff)
+jtag.write_ir(8, 0xFF)
 jtag.runtest(100)
 
 jtag.goto_state("RESET")

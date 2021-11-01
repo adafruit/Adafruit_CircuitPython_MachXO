@@ -1,3 +1,7 @@
+# SPDX-FileCopyrightText: 2020 Alec Delaney for Adafruit Industries
+#
+# SPDX-License-Identifier: Unlicense
+
 *_Implmnt/
 stdout.log
 synlog.tcl
