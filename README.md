@@ -1,6 +1,8 @@
-# SPDX-FileCopyrightText: 2020 Luke Valenty for Adafruit Industries
-#
-# SPDX-License-Identifier: Unlicense
+<!--
+SPDX-FileCopyrightText: 2020 Luke Valenty for Adafruit Industries
+
+SPDX-License-Identifier: Unlicense
+-->
 
 # TinyFPGA Programmer
 The TinyFPGA Programmer is a very simple USB-JTAG bridge designed to
